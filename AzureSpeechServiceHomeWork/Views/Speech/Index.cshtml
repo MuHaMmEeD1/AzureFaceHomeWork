@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+<div class="container">
+    <h2>Text to Speech</h2>
+    <form method="post" asp-action="TextToSpeech" asp-controller="Speech">
+        <div class="form-group">
+            <label for="text">Enter Text:</label>
+            <input type="text" class="form-control" id="text" name="text" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Convert to Speech</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-info mt-3">@ViewBag.Message</div>
+    }
+</div>
